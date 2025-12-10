@@ -1,0 +1,5 @@
+data/raw/
+data/temp_zips/
+__pycache__/
+.venv/
+venv/
