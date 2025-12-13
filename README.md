@@ -1,4 +1,4 @@
-Sym Train Simulation Intelligence Assistant 🤖
+Sym Train Simulation Intelligence Assistant
 
 A. Project Overview
 
@@ -12,9 +12,9 @@ Categorizes customer intent (e.g., Insurance Claims, Payment Updates).
 
 Generates a step-by-step resolution plan based on similar historical successful cases.
 
-Note: This project is architected to run 100% locally using open-source HuggingFace models (Bart-Large), ensuring zero data egress and no API costs.
+Note: This project is architected to run 100% locally using open-source HuggingFace models (Bart-Large), ensuring zero data egress and no API costs for the main application.
 
-🛠️ Tech Stack & Dependencies
+Tech Stack & Dependencies
 
 The project relies on a robust stack of Machine Learning and Web frameworks:
 
@@ -22,7 +22,9 @@ Frontend: Streamlit (Interactive Web UI)
 
 NLP Engine: HuggingFace Transformers
 
-Models: * facebook/bart-large-mnli (Zero-Shot Classification)
+Models:
+
+facebook/bart-large-mnli (Zero-Shot Classification)
 
 facebook/bart-large-cnn (Abstractive Summarization)
 
@@ -48,6 +50,7 @@ tensorflow
 
 scikit-learn
 
+openai
 
 B. Installation & Setup
 
@@ -75,18 +78,26 @@ The application will launch at http://localhost:8501.
 
 First Run Note: The system will automatically download the necessary AI models (~3GB). This may take 1-3 minutes.
 
-3. Run Model Analysis (Optional)
+3. Run Model Analysis (Comparison Task)
 
-To generate the performance comparison report (Transformer vs GPT) for presentation slides:
+To generate the performance comparison report (Local Transformer vs GPT-4o) for presentation slides:
+
+Run the analysis script:
 
 python src/analysis.py
 
+
+Input API Key: The script will pause and prompt you to enter an OpenAI API Key.
+
+Paste your key and press Enter to see the side-by-side comparison.
+
+Press Enter without a key to run only the Local Model analysis.
 
 C. Directory Structure
 
 DS5220-01_Course-Project/
 ├── data/
-│   ├── raw/                 # Source zip files
+│   ├── raw/                 # Source zip files (gitignored)
 │   └── processed/           # knowledge_base.csv (Generated)
 ├── src/
 │   ├── data_loader.py       # ETL Pipeline (Rescue & Repair logic)
@@ -117,6 +128,9 @@ Order Status (Delay): "Hi, I have been waiting for two weeks for the book I orde
 F. Contributors
 
 Developed for: DS5220 Course Project
-Developped by Israel Lwamba, Isiah and Eric
-Industry Partner: Sym Train
 
+Developed by: Israel Lwamba, Asiah Ruffin, and Eric
+
+Supervised by: Professor Kong
+
+Industry Partner: Sym Train

@@ -95,8 +95,13 @@ def run_comparison():
             if api_key:
                 print(" [GPT-4o]")
                 gpt_res = engine.analyze_gpt(row['full_transcript'], api_key)
-                print(f"   Category: {gpt_res.get('category')}")
-                print(f"   Steps:    {gpt_res.get('steps')}")
+                
+                # --- NEW DEBUGGING LINES ---
+                if "error" in gpt_res:
+                    print(f"   ERROR: {gpt_res['error']}")
+                else:
+                    print(f"   Category: {gpt_res.get('category')}")
+                    print(f"   Steps:    {gpt_res.get('steps')}")
             else:
                 print(" [GPT-4o] Skipped")
             
